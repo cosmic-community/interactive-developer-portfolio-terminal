@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  .terminal-cursor::after {
+    content: '▋';
+    animation: terminal-blink 1s infinite;
+    color: #7c3aed;
+  }
+
+  .terminal-output {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .skill-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .skill-beginner {
+    @apply bg-red-100 text-red-800;
+  }
+
+  .skill-intermediate {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+
+  .skill-advanced {
+    @apply bg-blue-100 text-blue-800;
+  }
+
+  .skill-expert {
+    @apply bg-green-100 text-green-800;
+  }
+}
+
+@layer utilities {
+  .fade-in {
+    animation: fade-in 0.5s ease-out;
+  }
+}
